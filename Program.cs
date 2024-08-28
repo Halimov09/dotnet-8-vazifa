@@ -15,19 +15,19 @@ int choice = int.Parse(Console.ReadLine());
 switch (choice)
 {
 case 1:
-Console.WriteLine("vazifaning nomini kiriting: ");
-string yangivazifa = Console.ReadLine();
-tasks.Add(new Tuple<string, bool>(yangivazifa, false)); 
-Console.WriteLine("vazifa qoshildi: ");
+    Console.WriteLine("vazifaning nomini kiriting: ");
+    string yangivazifa = Console.ReadLine();
+    tasks.Add(new Tuple<string, bool>(yangivazifa, false)); 
+    Console.WriteLine("vazifa qoshildi: ");
 break;
 
 case 2:
-Console.WriteLine("vazifa indexini kiriting: ");
-for (int i = 0; i < tasks.Count; i++)
-{
+    Console.WriteLine("vazifa indexini kiriting: ");
+    for (int i = 0; i < tasks.Count; i++)
+    {
     Console.WriteLine($"{i + 1}: {tasks[i].Item1} (Bajarilgan: {tasks[i].Item2})");
-}
-int index = int.Parse(Console.ReadLine())-1;
+    }
+    int index = int.Parse(Console.ReadLine())-1;
 
     if (index >= 0 && index < tasks.Count)
     {
@@ -41,13 +41,13 @@ int index = int.Parse(Console.ReadLine())-1;
 break;
 
 case 3:
-Console.WriteLine("vazifa bajarilganligini belgilash uchun uning raqami: ");
-for (int i = 0; i < tasks.Count; i++)
-{
+    Console.WriteLine("vazifa bajarilganligini belgilash uchun uning raqami: ");
+    for (int i = 0; i < tasks.Count; i++)
+    {
     Console.WriteLine($"{i + 1}: {tasks[i].Item1} (Bajarilgan: {tasks[i].Item2})");
-}
-int holati = int.Parse(Console.ReadLine())-1;
-if (holati >= 0 && holati < tasks.Count)
+    }
+    int holati = int.Parse(Console.ReadLine())-1;
+    if (holati >= 0 && holati < tasks.Count)
     {
         var task = tasks[holati];
         tasks[holati] = new Tuple<string, bool>(task.Item1, !task.Item2);
